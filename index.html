@@ -62,6 +62,16 @@
             animation: led-pulse 3s ease-in-out infinite;
         }
 
+        /* Hide scrollbars */
+        ::-webkit-scrollbar {
+            display: none;
+        }
+
+        * {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+
         .nav-hidden {
             transform: translateY(-100%);
             opacity: 0;
