@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Santa Elnea</title>
+    <meta name="description" content="Santa Elnea — coming soon." />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+                        serif: ['Cormorant Garamond', 'serif'],
+                    },
+                },
+            },
+        }
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@1,400;1,700&family=Inter:wght@300;400;500;800;900&display=swap"
+        rel="stylesheet" />
+    <style>
+        @keyframes scroll {
+            0% {
+                transform: translateX(0);
+            }
+
+            100% {
+                transform: translateX(-50%);
+            }
+        }
+
+        .animate-ticker {
+            display: flex;
+            width: max-content;
+            animation: scroll 60s linear infinite;
+        }
+
+        @keyframes led-pulse {
+
+            0%,
+            100% {
+                background-color: #404040;
+                /* neutral-700 */
+                box-shadow: 0 0 0px rgba(59, 130, 246, 0);
+            }
+
+            50% {
+                background-color: #3b82f6;
+                /* blue-500 */
+                box-shadow: 0 0 8px rgba(59, 130, 246, 0.6);
+            }
+        }
+
+        .animate-led {
+            animation: led-pulse 3s ease-in-out infinite;
+        }
+
+        .nav-hidden {
+            transform: translateY(-100%);
+            opacity: 0;
+        }
+
+        .nav-visible {
+            transform: translateY(0);
+            opacity: 1;
+        }
+    </style>
+</head>
+
+<body class="bg-neutral-950 text-neutral-200 font-sans antialiased min-h-screen flex flex-col pt-0">
+
+    <!-- Scroll-triggered Navbar -->
+    <nav id="scrolling-nav"
+        class="fixed top-0 left-0 w-full z-50 bg-neutral-950/80 backdrop-blur-md border-b border-neutral-900 py-4 px-8 transition-all duration-500 ease-in-out nav-hidden">
+        <div class="max-w-7xl mx-auto flex items-center justify-between">
+            <div class="text-sm tracking-widest flex items-baseline gap-1 uppercase">
+                <span
+                    class="font-serif italic lowercase tracking-tighter text-neutral-400 text-2xl leading-none">santa</span>
+                <span class="font-black">el<span class="italic">n</span>ea</span>
+                <span class="text-neutral-600 ml-2 font-normal tracking-widest text-[10px] sm:text-xs"> - vayase pa'l
+                    monte</span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <main class="flex-none flex flex-col items-center justify-center px-6 pt-32 pb-4 gap-10">
+
+        <!-- Logo -->
+        <img src="logo.svg" alt="Santa Elnea" class="w-full max-w-xs sm:max-w-sm md:max-w-md opacity-90 invert" />
+
+        <!-- Coming soon badge -->
+        <span
+            class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-neutral-700 bg-neutral-900 text-neutral-400 text-[10px] sm:text-xs font-medium tracking-widest uppercase">
+            <span class="w-1.5 h-1.5 rounded-full animate-led"></span>
+            Coming soon
+        </span>
+
+    </main>
+
+    <!-- Word Carousel -->
+    <section class="flex-1 flex items-center w-full border-y border-neutral-900 overflow-hidden py-12">
+        <div class="relative flex overflow-x-hidden">
+            <div class="animate-ticker flex items-center gap-16 sm:gap-32 px-16">
+                <!-- Group 1 -->
+                <span
+                    class="font-serif italic font-bold tracking-[0.2em] text-4xl sm:text-6xl text-neutral-600 hover:text-neutral-300 transition-colors cursor-default whitespace-nowrap">pachelly</span>
+                <span
+                    class="font-serif italic font-bold tracking-[0.2em] text-4xl sm:text-6xl text-neutral-600 hover:text-neutral-300 transition-colors cursor-default whitespace-nowrap">calazans</span>
+                <span
+                    class="font-serif italic font-bold tracking-[0.2em] text-4xl sm:text-6xl text-neutral-600 hover:text-neutral-300 transition-colors cursor-default whitespace-nowrap">palmas</span>
+                <span
+                    class="font-serif italic font-bold tracking-[0.2em] text-4xl sm:text-6xl text-neutral-600 hover:text-neutral-300 transition-colors cursor-default whitespace-nowrap">barbacoas</span>
+                <span
+                    class="font-serif italic font-bold tracking-[0.2em] text-4xl sm:text-6xl text-neutral-600 hover:text-neutral-300 transition-colors cursor-default whitespace-nowrap">sebastiana</span>
+                <span
+                    class="font-serif italic font-bold tracking-[0.2em] text-4xl sm:text-6xl text-neutral-600 hover:text-neutral-300 transition-colors cursor-default whitespace-nowrap">tablazo</span>
+                <!-- Group 2 (repeat for seamless loop) -->
+                <span
+                    class="font-serif italic font-bold tracking-[0.2em] text-4xl sm:text-6xl text-neutral-600 hover:text-neutral-300 transition-colors cursor-default whitespace-nowrap">pachelly</span>
+                <span
+                    class="font-serif italic font-bold tracking-[0.2em] text-4xl sm:text-6xl text-neutral-600 hover:text-neutral-300 transition-colors cursor-default whitespace-nowrap">calazans</span>
+                <span
+                    class="font-serif italic font-bold tracking-[0.2em] text-4xl sm:text-6xl text-neutral-600 hover:text-neutral-300 transition-colors cursor-default whitespace-nowrap">palmas</span>
+                <span
+                    class="font-serif italic font-bold tracking-[0.2em] text-4xl sm:text-6xl text-neutral-600 hover:text-neutral-300 transition-colors cursor-default whitespace-nowrap">barbacoas</span>
+                <span
+                    class="font-serif italic font-bold tracking-[0.2em] text-4xl sm:text-6xl text-neutral-600 hover:text-neutral-300 transition-colors cursor-default whitespace-nowrap">sebastiana</span>
+                <span
+                    class="font-serif italic font-bold tracking-[0.2em] text-4xl sm:text-6xl text-neutral-600 hover:text-neutral-300 transition-colors cursor-default whitespace-nowrap">tablazo</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="max-w-4xl mx-auto px-8 pt-12 pb-32 space-y-16">
+        <h2 class="text-6xl sm:text-8xl font-black tracking-tighter text-neutral-100 uppercase leading-[0.9] max-w-2xl">
+            vayase pa'l monte, nea
+        </h2>
+
+        <div
+            class="space-y-8 font-light text-neutral-500 text-[10px] leading-[1.6] tracking-wide max-w-xl ml-auto text-justify uppercase hyphens-auto">
+            <p>
+                Real son situaciones, razones para contarlas tengo demasiadas. Situaciones en la vida, jóvenes movidas,
+                caídas de corazones malos y unos plones. Encandelillado con la luz de mi ciudad, en el morro relajado
+                manejando la ansiedad. En la calle me crié y aprendí en el callejón. Muchos hablan del barrio pero nadie
+                azara. Viejas chismosas andaban diciendo que esta noche se iba a calentar. "Vea a este marica lo que me
+                dice..." ¡Derechito para la casa que hay muchos sicarios ocupados! No problem, es el estilacho, ese
+                muchacho del barrio que anda borracho.
+            </p>
+            <p>
+                "¿Pa' qué zapatos si no hay casa?" Hacer plata llevando perico es uno con la zozobra tan hijueputa.
+                ¿Usted cree que la plata se consigue así de fácil? Eso es con sangre. Yo veo a los que suben, huevón, no
+                crea que esto es fácil. "¡Me la mecatié en cositas!" Usted se está volviendo un chirrete. Mírame a la
+                cara hijo de puta, mírame. Te voy a volver el Papá Noel al otro lado... vas a ir todos los días a
+                llevarle felicidad a esos maricas. "Sapa, zorra, regalada." Usted por qué es así de grosera conmigo, ¿yo
+                qué le he hecho?
+            </p>
+            <p>
+                Este carro me traía al niño Dios cuando yo estaba chiquito, mano. "¿Usted sabe qué es lo que yo más
+                quiero en la vida? Una familia, una mamá y un papá." ¡Papi, no me deje morir! Si somos delincuentes para
+                la gente, si no es delito entonces yo soy inocente. Vamos a beber, porque esta noche vamos a enloquecer.
+                El día que yo me muera, que un angelito me dé consuelo y si es posible sea un hijo de perra.
+            </p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-10 px-6 border-t border-neutral-900">
+        <p class="text-center text-neutral-700 text-[10px] tracking-widest uppercase">
+            &copy; <span id="year"></span> Santa Elnea. All rights reserved.
+        </p>
+    </footer>
+
+    <script>
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        const nav = document.getElementById('scrolling-nav');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 100) {
+                nav.classList.remove('nav-hidden');
+                nav.classList.add('nav-visible');
+            } else {
+                nav.classList.remove('nav-visible');
+                nav.classList.add('nav-hidden');
+            }
+        });
+    </script>
+</body>
+
+</html>
